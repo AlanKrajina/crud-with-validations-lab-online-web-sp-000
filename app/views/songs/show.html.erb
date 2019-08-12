@@ -1,4 +1,6 @@
 <h2><%= @song.title %></h2>
+<%= link_to "edit", edit_song_path(@song) %>
+
 <%= @song.released %>
 <%= @song.release_year %>
 <%= @song.artist_name %>
@@ -7,3 +9,4 @@
 <%= form_tag song_path(@song.id), method: "delete" do %>
   <%= submit_tag "Delete #{@song.title}" %>
 <% end %>
+
