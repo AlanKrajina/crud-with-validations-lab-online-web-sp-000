@@ -13,6 +13,7 @@ class Song < ApplicationRecord
 
   def released_true?
     released == true
+    self.release_year.to_i <= Time.now.year
   end
 
   def release_year?
