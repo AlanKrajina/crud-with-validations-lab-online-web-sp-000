@@ -5,7 +5,7 @@ class Song < ApplicationRecord
 
 #  binding.pry
 
-#  validates :release_year,  presence: true, if: :release_year?
+  validates :release_year,  presence: true, if: :release_year?
 
 
   validates :artist_name, presence: true
@@ -17,9 +17,7 @@ class Song < ApplicationRecord
 
   def release_year?
 #    binding.pry
-    if self.release_year.to_i <= Time.now.year
-      return true
-    end
+     release_year.to_i <= Time.now.year
   end
 end
 
