@@ -1,8 +1,10 @@
 class Song < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :released, inclusion: { in: [ true, false ] }
-  validates :release_year, presence: true, if: :released_true?
-
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: { less_than_or_equal_to: Time.now.year }
+  end
 #  binding.pry
 
 #  validates :release_year,  presence: true, if: :release_year?
@@ -11,13 +13,9 @@ class Song < ApplicationRecord
   validates :artist_name, presence: true
 
 
-  def released_true?
-    released == true
-  end
 
-  def release_year?
-#    binding.pry
-     release_year.to_i <= Time.now.year
+  def released?
+    released
   end
 end
 
