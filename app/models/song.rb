@@ -5,7 +5,7 @@ class Song < ApplicationRecord
 
 #  binding.pry
 
-  validates :release_year,  presence: true, if: :release_year?
+#  validates :release_year,  presence: true, if: :release_year?
 
 
   validates :artist_name, presence: true
