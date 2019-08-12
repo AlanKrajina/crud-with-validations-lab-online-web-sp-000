@@ -13,7 +13,8 @@ class Song < ApplicationRecord
   end
 
   def release_year?
-
+    if
+    end
   end
 end
 
