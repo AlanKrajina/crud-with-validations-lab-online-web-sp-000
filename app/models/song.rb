@@ -15,8 +15,9 @@ class Song < ApplicationRecord
   end
 
   def release_year?
-    Time.now.year
-    binding.pry
+    if release_year <= Time.now.year
+      return true
+    end
   end
 end
 
