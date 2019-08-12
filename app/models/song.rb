@@ -16,7 +16,7 @@ class Song < ApplicationRecord
 
   def release_year?
     binding.pry
-    if :release_year <= Time.now.year
+    if self.release_year <= Time.now.year
       return true
     end
   end
