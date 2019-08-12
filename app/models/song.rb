@@ -2,7 +2,7 @@ class Song < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :released, inclusion: { in: [ true, false ] }
   validates :release_year, presence: true, if: :released_true?
-  binding.pry
+#  binding.pry
 
   validates :release_year, if: :release_year?
 
