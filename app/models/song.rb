@@ -13,7 +13,7 @@ class Song < ApplicationRecord
   end
 
   def release_year?
-    Time.now.year 
+    Time.now.year
     binding.pry
   end
 end
