@@ -12,6 +12,9 @@ class Song < ApplicationRecord
     released == true
   end
 
+  def release_year
+
+  end
 end
 
 
