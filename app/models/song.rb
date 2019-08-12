@@ -2,7 +2,7 @@ class Song < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :released, inclusion: { in: [ true, false ] }
   validates :release_year, presence: true, if: :released_true?
-  validates :release_year, if: :released_true?
+  validates :release_year, if: :release_year?
 
 
   validates :artist_name, presence: true
@@ -12,7 +12,7 @@ class Song < ApplicationRecord
     released == true
   end
 
-  def release_year
+  def release_year?
 
   end
 end
