@@ -46,24 +46,5 @@ class SongsController < ApplicationController
 	  params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
 	end
   
-#  def song_params
-#    params.permit(:title, :released, :release_year, :artist_name, :genre)
-#  end
+
 end
-
-=begin
-3] pry(#<SongsController>)> @song = Song.new(song_params)
-Unpermitted parameters: utf8, authenticity_token, song, commit
-=> #<Song:0x00007fe921cdd888
- id: nil,
- title: nil,
- released: nil,
- release_year: nil,
- artist_name: nil,
- genre: nil,
- created_at: nil,
- updated_at: nil>
-[4] pry(#<SongsController>)> song_params
-Unpermitted parameters: utf8, authenticity_token, song, commit
-
-=end
