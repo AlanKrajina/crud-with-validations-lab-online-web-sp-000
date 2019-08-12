@@ -42,10 +42,14 @@ class SongsController < ApplicationController
   end
   
   private
-
-  def song_params
-    params.permit(:title, :released, :release_year, :artist_name, :genre)
-  end
+  
+  def song_params(*args)
+	  params.require(:post).permit(*args)
+	end
+  
+#  def song_params
+#    params.permit(:title, :released, :release_year, :artist_name, :genre)
+#  end
 end
 
 =begin
